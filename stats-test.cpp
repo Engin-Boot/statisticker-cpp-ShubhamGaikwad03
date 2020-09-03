@@ -20,7 +20,7 @@ TEST_CASE("average is NaN for empty array") {
     //Use http://www.cplusplus.com/reference/cmath/isnan/
     auto computedStats = Statistics::ComputeStatistics({});
     
-    REQUIRE(insnan(computedStats.average)==true);
-    REQUIRE(insnan(computedStats.min)==true);
-    REQUIRE(insnan(computedStats.max)==true);
+    REQUIRE(isnan(computedStats.average)==true);
+    REQUIRE(isnan(computedStats.min)==true);
+    REQUIRE(isnan(computedStats.max)==true);
 }
