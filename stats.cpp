@@ -17,10 +17,15 @@ Stats Statistics::ComputeStatistics(const std::vector<float>& value) {
     float sum=0;
     st.min = *min_element(value.begin(),value.end());
     st.max = *max_element(value.begin(), value.end());
+    int count=0;
     for (int i = 0; i < value.size(); i++)
     {
+        if(!insan(value[i]))
+        {
         sum = sum + value[i];
+        count=count+1;
+        }
     }
-    st.average = sum/value.size();
+    st.average = sum/count;
     return st;
 }
