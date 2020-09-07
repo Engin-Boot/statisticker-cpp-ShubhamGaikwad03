@@ -12,6 +12,17 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
 }
+
+
+TEST_CASE("reports average, minimum and maximum for array containing atleast one NaN input") 
+{
+    auto computedStats = Statistics::ComputeStatistics({2.1, 7.9,2.5,NAN, 4.5,NAN});
+    double epsilon = 0.001;
+    REQUIRE(std::abs(computedStats.average - 4.25) < epsilon);
+    REQUIRE(std::abs(computedStats.max - 7.9) < epsilon);
+    REQUIRE(std::abs(computedStats.min - 2.1) < epsilon);
+}
+
 TEST_CASE("average is NaN for empty array") {
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h 
