@@ -13,7 +13,6 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
 }
 
-
 TEST_CASE("reports average, minimum and maximum when atleast one input is NAN") {
     auto computedStats = Statistics::ComputeStatistics({1.5,nan(""), 8.9, 3.2, 4.5});
     float epsilon = 0.001;
