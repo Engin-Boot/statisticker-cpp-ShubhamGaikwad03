@@ -10,7 +10,7 @@ float getAverage(const vector<float>& value)
     float count=0;
     for (int i = 0; i < value.size(); i++)
     {
-        if(!insan (value[i]) )
+        if(value[i] != NAN)
         {
         sum = sum + value[i];
         count=count+1;
