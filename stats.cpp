@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm>
 #include <math.h>
+#include<cmath>
+
 using namespace std;
 
 float getAverage(const vector<float>& value)
@@ -10,7 +12,7 @@ float getAverage(const vector<float>& value)
     float count=0;
     for (int i = 0; i < value.size(); i++)
     {
-        if(value[i] != NAN)
+        if(!isnan(value[i]))
         {
         sum = sum + value[i];
         count=count+1;
